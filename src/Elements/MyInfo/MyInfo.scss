@@ -1,0 +1,38 @@
+.myInfo {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  color: #595959;
+  &__fullname {
+    font-size: 45px;
+    line-height: 89px;
+    font-weight: 700;
+    color: #fff;
+  }
+  &__job {
+    font-weight: 700;
+  }
+
+  &__aboutMe {
+    max-width: 50%;
+    color: #fff;
+  }
+}
+@media (max-width: 1050px) {
+  .myInfo {
+    padding-top: 25px;
+    &__aboutMe {
+      max-width: 75%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .myInfo {
+    &__aboutMe {
+      max-width: 100%;
+    }
+  }
+}
+@media (max-width: 350px) {
+}

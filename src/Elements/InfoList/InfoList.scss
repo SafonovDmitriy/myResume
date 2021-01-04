@@ -1,0 +1,47 @@
+.workExperience {
+    &__title {
+      font-size: 22px;
+      line-height: 24px;
+      font-weight: 700;
+      padding-bottom: 18px;
+    }
+    &__item {
+      .work {
+        color: #ff7d3d;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        &__period {
+          color: #a8a8a8;
+          font-size: 12px;
+          line-height: 24px;
+          font-weight: 400;
+          letter-spacing: 0.03em;
+        }
+      }
+      &-aboutWork {
+        padding-top: 5px;
+        padding-bottom: 30px;
+        li {
+          font-size: 14px;
+          line-height: 24px;
+          font-weight: 400;
+          letter-spacing: 0.03em;
+
+          &:nth-child(odd) {
+            color: #ff7d3d;
+            span {
+              color: #a9d6ff;
+            }
+          }
+          &:nth-child(even) {
+            color: #a9d6ff;
+            span {
+              color: #ff7d3d;
+            }
+          }
+        }
+      }
+    }
+  }

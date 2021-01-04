@@ -1,0 +1,19 @@
+.Wrapper {
+  background-color: #121212;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "sidebarBox contentBox ";
+  grid-template-columns: 40%;
+  .sidebar {
+    grid-area: sidebarBox;
+  }
+  .content {
+    grid-area: contentBox;
+  }
+}
+@media (max-width: 1050px) {
+  .Wrapper {
+    grid-template-areas: "sidebarBox  " "contentBox";
+    grid-template-columns: 100%;
+  }
+}

@@ -1,0 +1,126 @@
+.sideBar {
+  background-color: #202427;
+  display: flex;
+  border-radius: 25px;
+  flex-direction: column;
+  // flex-basis: 25%;
+  max-width: 370px;
+
+  a,
+  h3,
+  li {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+  }
+  h3 {
+    padding: 0px 0 20px 40px;
+  }
+  ul {
+    padding: 0px 0 50px 40px;
+  }
+  h3 {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  li {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    a {
+      opacity: 0.5;
+      font-weight: 400;
+    }
+  }
+  padding: 40px 0;
+  .myPhoto {
+    width: 370px;
+    height: 354px;
+    padding-bottom: 57px;
+  }
+
+  .skill-list {
+    &__item {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+
+      &::before {
+        content: "";
+        display: inline-flex;
+        width: 4px;
+        height: 4px;
+        background-color: #ff6b08;
+        border-radius: 2px;
+        position: relative;
+        left: -4px;
+        top: -3px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .sideBar {
+    display: grid;
+    max-width: 100%;
+    grid-template-areas: "photo photo" "cont cont" "tech soft";
+
+    .myPhoto {
+      margin: 0 auto;
+      padding-bottom: 5px;
+      grid-area: photo;
+    }
+    .contacts {
+      margin: 0 auto;
+      grid-area: cont;
+    }
+    .tech {
+      grid-area: tech;
+    }
+    .soft {
+      grid-area: soft;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .sideBar {
+    display: grid;
+    max-width: 100%;
+    grid-template-areas: "photo " "cont " "tech " "soft";
+    .myPhoto {
+      width: 250px;
+      margin: 0 auto;
+      height: 354px;
+      padding-bottom: 57px;
+    }
+    .tech,
+    .soft {
+      margin: 0 auto;
+      * {
+        padding: 0;
+      }
+      ul {
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 350px) {
+  .sideBar {
+    * {
+      padding: 0;
+    }
+    display: grid;
+    max-width: 100%;
+    .myPhoto {
+      width: 200px;
+      margin: 0 auto;
+      height: 354px;
+      padding-bottom: 57px;
+    }
+  }
+}

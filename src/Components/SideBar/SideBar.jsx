@@ -1,25 +1,27 @@
 import React from "react";
 import "./SideBar.scss";
 import myPhoto from "../../img/myPhoto.jpg";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import Spinner from "./../../Elements/Spinner/Spinner";
+import { myInfoSideBarSelector } from "./../../Redux/Selectors/Selectors";
 
-const SideBar = (props) => {
+const SideBar = () => {
+  const myInfo = useSelector(myInfoSideBarSelector);
   return (
     <aside className="sideBar">
       <img src={myPhoto} alt="myPhoto" className="myPhoto" />
       <div className="contacts">
         <h3>Contacts</h3>
-        {props.contacts ? (
+        {myInfo.contacts ? (
           <ul>
             <li>
               <b>C: </b>
-              <a href={`tel:${props.contacts.tel}`}>{props.contacts.tel}</a>
+              <a href={`tel:${myInfo.contacts.tel}`}>{myInfo.contacts.tel}</a>
             </li>
             <li>
               <b>E: </b>
-              <a href={`mailto:${props.contacts.email}`}>
-                {props.contacts.email}
+              <a href={`mailto:${myInfo.contacts.email}`}>
+                {myInfo.contacts.email}
               </a>
             </li>
           </ul>
@@ -29,18 +31,16 @@ const SideBar = (props) => {
       </div>
       <div className="tech">
         <h3>Tech Skills</h3>
-        {props.techSkill !== undefined ? (
+        {myInfo.techSkill ? (
           <ul className="skill-list">
-            {props.techSkill.map((item, idx) => {
-              return (
-                <li
-                  className="skill-list__item"
-                  key={`tech-list__item-${idx + 1}`}
-                >
-                  {item}
-                </li>
-              );
-            })}
+            {myInfo.techSkill.map((item, idx) => (
+              <li
+                className="skill-list__item"
+                key={`tech-list__item-${idx + 1}`}
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         ) : (
           <Spinner />
@@ -48,18 +48,16 @@ const SideBar = (props) => {
       </div>
       <div className="soft">
         <h3>Soft Skills</h3>
-        {props.softSkill !== undefined ? (
+        {myInfo.softSkill ? (
           <ul className="skill-list">
-            {props.softSkill.map((item, idx) => {
-              return (
-                <li
-                  className="skill-list__item"
-                  key={`skill-list__item-${idx + 1}`}
-                >
-                  {item}
-                </li>
-              );
-            })}
+            {myInfo.softSkill.map((item, idx) => (
+              <li
+                className="skill-list__item"
+                key={`skill-list__item-${idx + 1}`}
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         ) : (
           <Spinner />
@@ -68,13 +66,5 @@ const SideBar = (props) => {
     </aside>
   );
 };
-const mapStateToProps = (state) => {
-  const sideBar = state.mainInfo;
-  return {
-    contacts: sideBar.contacts,
-    techSkill: sideBar.techSkill,
-    softSkill: sideBar.softSkill,
-  };
-};
 
-export default connect(mapStateToProps, null)(SideBar);
+export default SideBar;

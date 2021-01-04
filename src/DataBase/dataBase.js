@@ -34,7 +34,7 @@ let dataBase = {
       "TypeScript",
       "REST API",
     ],
-    softSkill: ["test", "test", "test"],
+    softSkill: ["Visual Studio Code", "Avocode"],
   },
   workExperience: [
     {
